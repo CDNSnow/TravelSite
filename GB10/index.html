@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Gettysburg/title>
+    <link rel="stylesheet" href="Carousel.css" />
+    <script src="config.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <table>
+        <tr>
+            <td>
+                <span class='header'>
+                    <script>
+                        header = header + "&nbsp|&nbsp&nbsp&nbsp";
+                        for (var i = 0, len = links.length; i < len; i++) {
+                            header += "<a href=" + hrefs[i] + ">" + links[i] + "</a>";
+                            header += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+                        }
+                        document.write(header + "<br/>");
+                    </script>
+                </span>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <!-- back arrow -->
+                <img width="30" alt="" class="box" onclick="goBackward()" src="goBackward.png" />
+            </td>
+            <td>
+                <!-- picture -->
+                <div style="width:100%;  margin-left: 50px;">
+                    <img id='currentImage' alt='' class='box image' src='cranes.jpg' position="relative"/>
+                </div>
+            </td>
+            <td>
+                <!-- fwd arrow -->
+                <script>
+                    document.write("<img id='fwdarrow' width='30' alt='' class='box spaced' onclick='goForward()' src='goForward.png' />");
+                </script>
+            </td>
+
+            <td class="vabox">
+                <!-- text -->
+                <div id='currentText' style="font-size:20px;">
+                    <script>
+                        var text = texts[currentImage];
+                        document.write(text);
+                    </script>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- counter -->
+    <div class="table-row">
+        <script>
+            var p = document.getElementById('currentImage');
+            var w = p.clientWidth / 2;
+            document.write("<span id='counter' class='table-cell' style='margin-left:" + w + "px;'>");
+            document.write("<b>" + (currentImage + 1) + " / " + pictures.length + "</b>");
+            document.write("</span>");
+        </script>
+    </div>
+
+
+    <script>
+        var currentImage = 0;
+
+        function goForward() {
+            currentImage = (currentImage + 1) % pictures.length;
+            updateContent();
+        }
+
+        function goBackward() {
+            currentImage = (currentImage - 1 + pictures.length) % pictures.length;
+            updateContent();
+        }
+
+        function updateContent() {
+            document.getElementById("currentText").innerHTML = texts[currentImage];
+            document.getElementById("counter").innerHTML = (currentImage + 1) + " / " + pictures.length;
+            var source = pictures[currentImage];
+            var theImage = document.getElementById("currentImage");
+            theImage.setAttribute("src",pictures[currentImage]);
+        }
+    </script>
+</body>
+</html>

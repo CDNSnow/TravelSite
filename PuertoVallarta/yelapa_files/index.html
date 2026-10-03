@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #000000;
+}
+body,td,th {
+	color: #FFCC00;
+}
+.style7 {color: #FFCC00; }
+-->
+</style>
+<script type="text/javascript">
+var i = 0;
+var nImages = 25;
+var images = new Array();
+images[0] = "Robin.jpg";
+images[1] = "SharonCraig.jpg";
+images[2] = "PeterSue.jpg";
+images[3] = "KarlGilda.jpg";
+images[4] = "KateBeverly.jpg";
+images[5] = "Lara.jpg";
+images[6] = "MikeV.jpg";
+images[7] = "SteveS.jpg";
+images[8] = "KarlLance.jpg";
+images[9] = "Matt.jpg";
+images[10] = "NewtonCindy.jpg";
+images[11] = "LynRinLaurie.jpg";
+images[12] = "TomYvetteJames.jpg";
+images[13] = "VictorLyn.jpg";
+images[14] = "AndyDave.jpg";
+images[15] = "Anita.jpg";
+images[16] = "BrettNaijun.jpg";
+images[17] = "BrianJuneMike.jpg";
+images[18] = "DaveM.jpg";
+images[19] = "DaveS.jpg";
+images[20] = "Don.jpg";
+images[21] = "Elaine.jpg";
+images[22] = "Melanie.jpg";
+images[23] = "KateBeverly.jpg";
+images[24] = "RinLiz.jpg";
+function next()
+{
+i++;
+if (i == nImages) 
+     { i = 0; }
+document.getElementById('pict').src = images[i];
+}
+
+function prev()
+{
+i--;
+if (i < 0) 
+	{ i = nImages - 1;}
+document.getElementById('pict').src = images[i];
+}
+</script>
+</head>
+
+
+
+<body>
+<table width="703" border="0">
+  <tr>
+    <td width="1167" height="88"><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td height="572">      <div align="center">
+      <table width="691" border="3" bordercolor="#FFCC00">
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="830"><div align="center" class="style7"></div></td>
+          </tr>
+        <tr>
+          <td><table width="683" border="0">
+            <tr>
+              <td width="336" class="style7"><div align="center"><a href="this.next">
+                <map name="Map2" id="Map2">
+                      <area shape="rect" coords="-2,-18,58,29" href="javascript:prev()" />
+                    </map>
+                </a>
+				<a href="this.prev"><img src="arrowsleft.jpg" width="65" height="52" border="0" usemap="#Map2" /></a></div></td>
+                  <td width="337" class="style7"><div align="center"><a href="this.next"><img src="arrowsright.jpg" width="67" height="53" border="0" usemap="#Map" /></a>
+                      <map name="Map" id="Map">
+                        <area shape="rect" coords="216,12,280,61" href="javascript:next()" />
+                        <area shape="rect" coords="1,3,64,51" href="javascript:next();" />
+                      </map>
+                  </div></td>
+                </tr>
+            </table></td>
+          </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+
+</body>
+</html>

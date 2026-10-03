@@ -1,0 +1,31 @@
+var header = "Medellin";
+var links = ["Medellin", "Pablo Escobar", "Coffee Plantation", "Guatape and El Pinol"];
+var hrefs = ["./medellin/index.html", "./pablo/index.html", "./coffee/index.html", "./pinol/index.html"];
+var texts = new Array();
+var images = new Array();
+texts[0] ="Took a van a couple hours out of town up into the mountains to see how coffee works. Turns out all the tours I'd booked were one-on-one, which explained why they all cost $350 each. "
+texts[0] += "When we arrived at the plantation, this was the view." 
+texts[1] = "Baby coffees. It takes about 5 years for the bush to mature; at which point it yields approximately one pound of roasted coffee per year ";
+texts[1] += "The plants are clipped at the length of the poles because that's as high as the pickers can reach."
+texts[2] = "Coffee harvesting bucket. Requires stooping and stretching to get the beans. Tour guide said he worked as a picker for a few minutes. "
+texts[2] += "Then he lost his footing, rolled down a hillside, and tore his ACL."
+texts[3] = "Havested beans are dried for a week to around 15% moisture content. If it rains, the clock starts over."
+texts[4] = "Blurry pic of the roaster and grinder. I ended up without a photo of it, but the beans drop into a concrete channel ";
+texts[4] += "angled down with water flowing through it. At the wall, the channel turns around and descends another loop for four ";
+texts[4] += "loops total. There are buckets in the bottom of the channel. Beans sort themselves by weight and drop into the "
+texts[4] += "appropriate channel.  In effect, it's a mass spectrometer!"
+texts[5] = "Bagged coffee ready to ship. Each bag weighs 250 lb and brings about $100. It's not exactly an open marked--Folgers and Maxwell House "
+texts[5] += "account for 70% of sales worldwide. If you were to buy this retail in the US, you'd pay around $2,500 at $10/lb typical."
+texts[6] = "The owner's kid. He demanded my iPhone and started figuring out how everything works."
+texts[6] += "He got pretty far. There's a career in engineering ahead, if he can get the schooling."
+texts[7] = "In coffee country: the cafe is to the right of the divider. On the left, a complete inhouse processing plant."
+var pictures = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg"];
+var maxWidth = 0;
+var image = new Image();
+for (picture in pictures) {
+    image.src = picture;
+    if (image.naturalWidth > maxWidth) {
+        maxWidth = image.naturalWidth;
+    }
+}
+var currentPic = 0;

@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Medellin Colombia</title>
+<style>
+* {
+	padding: 0px;
+	box-sizing: border-box;
+	background-color: antiquewhite;
+}
+a {
+	outline: none;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+}
+a:link {
+	color: darkblue;
+}
+a:visited {
+	color: blueviolet;
+}
+a:focus {
+	border-bottom: 1px solid;
+	background: #BAE498;
+}
+a:hover {
+	border-bottom: 1px solid;
+	background: #CDFEAA;
+}
+a:active {
+	background: #265301;
+	color: #CDFEAA;
+}
+.header {
+	text-align: center;
+	color: black;
+	font-size: xx-large;
+	font-weight: bold;
+}
+.table {
+	width: 100vw;
+	left;
+}
+.padded {
+	padding-bottom: 20px;
+}
+.arrow {
+	height: 40px;
+	width: auto;
+}
+.text {
+	font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+config = $.getJSONP({
+            dataType: "json",
+            url: 'config.json'
+});    
+	var header = config.header;
+    var hrefs = config.hrefs;
+    var texts = config.texts;
+    var links = config.links
+    var pictures = config.pictures;
+    var currentPic = 0;
+        function goForward() {
+            currentPic = currentPic + 1;
+            if (currentPic == pictures.length) {
+                currentPic = 0;
+            }
+            document.getElementById("currentImage").setAttribute("src", pictures[currentPic]);
+ 			document.getElementById("currentText").innerHTML = texts[currentPic];
+        }
+        function goBackward() {
+            currentPic = currentPic - 1;
+            if (currentPic < 0)
+                currentPic = pictures.length - 1;
+          document.getElementById("currentImage").setAttribute("src", pictures[currentPic]);
+ 			document.getElementById("currentText").innerHTML = texts[currentPic];
+        }
+    </script>
+</head>
+
+<body>
+
+<table class="table">
+	<tr class="header">
+		<!-- Banner row -->
+		<td>
+		<script type="text/javascript">document.write(header);</script>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table style="width: 30%">
+			<!-- Menu, buttons and pic row -->
+			<!-- Menus vertical placement -->
+			<tr>
+				<td>
+				<table style="width: 100%;">
+					<tr>
+						<td style="height: 80px;">&nbsp;</td>
+					</tr>
+					<tr>
+						<script type="text/javascript">
+						for(var i=0, len=links.length; i < len; i++){
+							document.write("<td class='padded'><a href=>" + hrefs[i] + "<" + links[i] + "</a></td>")
+					}
+					</script>
+					</tr>
+				</table>
+				</td>
+				<td>
+				<img class="arrow" onclick="goForward()" src="goBackward.png" />
+				</td>
+				<td>
+				<script type="text/javascript">
+					document.write('<img id="currentImage" alt="" style="height: auto; width: 40vw)>' + pictures[currentPic] + "</img>");
+				</script>
+				</td>
+				<td>
+				<img alt="" class="arrow" onclick="goBackward()" src="goForward.png" />
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<table>
+	<!-- Text row -->
+	<tr>
+		<td style="width: 93%">&nbsp;</td>
+		<td class="text">
+		<p id="currentText">
+		<script type="text/javascript">
+			document.write(texts[0]);
+		</script>
+		</p>
+		</td>
+	</tr>
+</table>
+
+</body>
+
+</html>
